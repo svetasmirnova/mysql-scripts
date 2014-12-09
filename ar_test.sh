@@ -29,7 +29,7 @@ error()
 # creates defaults values
 initialize()
 {
-	MACHINE_HOME_DIR=$HOME/blade12
+	MACHINE_HOME_DIR=$HOME
 	TESTDIR=$MACHINE_HOME_DIR/src/tests
 	TESTS_TO_MOVE=""
 	OLD_PWD=`pwd`

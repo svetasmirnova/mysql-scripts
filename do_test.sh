@@ -38,7 +38,7 @@ error()
 # creates defaults values
 initialize()
 {
-	MACHINE_HOME_DIR=$HOME/blade12
+	MACHINE_HOME_DIR=$HOME
 	TESTDIR=$MACHINE_HOME_DIR/src/tests
 	BUILDDIR=$MACHINE_HOME_DIR/build
 	BUILDS="mysql-5.5 mysql-5.6 mysql-trunk"

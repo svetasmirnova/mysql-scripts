@@ -25,7 +25,7 @@ for build in $builds
 
         rm "$srcbase/$build/CmakeCache.txt"
 
-        cmake "$srcbase/$git_dir" -DCMAKE_INSTALL_PREFIX="$installbase/$build" --DWITH_DEBUG=1 -DDOWNLOAD_BOOST=1 -DWITH_BOOST="$srcbase/$build/boost"
+        cmake "$srcbase/$git_dir" -DCMAKE_INSTALL_PREFIX="$installbase/$build" -DWITH_DEBUG=1 -DDOWNLOAD_BOOST=1 -DWITH_BOOST="$srcbase/$build/boost"
         make
 
         if [ $? -ne 0 ]

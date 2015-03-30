@@ -2,12 +2,13 @@
 
 # Place path to specific machine home directory here
 MACHINE_HOME_DIR=$HOME
-source $MACHINE_HOME_DIR/.profile
+source $MACHINE_HOME_DIR/.bashrc
 
 srcbase=$MACHINE_HOME_DIR/src/
 installbase=$MACHINE_HOME_DIR/build
-builds="mysql-5.5 mysql-5.6 mysql-trunk"
-git_dir="mysql-git"
+builds="5.5 5.6 5.7"
+build_prefix="mysql-"
+git_dir="mysql-server"
 
 for build in $builds
         do
@@ -17,15 +18,15 @@ for build in $builds
         git checkout $build
         if [ $? -ne 0 ]
                 then
-                echo "checkout of $bild failed" >> $1
+                echo "checkout of $build failed" >> $1
         fi
 
         echo "=== Building $build ==="
-        cd "$srcbase/$build"
+        cd "$srcbase/$build_prefix$build"
 
-        rm "$srcbase/$build/CmakeCache.txt"
+        rm "$srcbase/$build_prefix$build/CmakeCache.txt"
 
-        cmake "$srcbase/$git_dir" -DCMAKE_INSTALL_PREFIX="$installbase/$build" -DWITH_DEBUG=1 -DDOWNLOAD_BOOST=1 -DWITH_BOOST="$srcbase/$build/boost"
+        cmake "$srcbase/$git_dir" -DCMAKE_INSTALL_PREFIX="$installbase/$build_prefix$build" -DWITH_DEBUG=1 -DDOWNLOAD_BOOST=1 -DWITH_BOOST="$srcbase/$build_prefix$build/boost"
         make
 
         if [ $? -ne 0 ]

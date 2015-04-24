@@ -69,6 +69,7 @@ build()
 		echo "=> $build"
 		cd $srcbase/$git_dir
 		git checkout $build
+		git pull
 		if [ $? -ne 0 ]
 			then
 			echo "checkout of $build failed" >> $1

@@ -68,7 +68,7 @@ build()
 		echo "=== Downloading $build ==="
 		echo "=> $build"
 		cd $srcbase/$git_dir
-		git checkout $build
+		git checkout -f $build
 		git pull
 		if [ $? -ne 0 ]
 			then

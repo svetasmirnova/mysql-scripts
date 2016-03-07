@@ -78,7 +78,7 @@ build()
 		echo "=== Building $build ==="
 		cd "$srcbase/$build_prefix$build"
 	
-		rm "$srcbase/$build_prefix$build/CmakeCache.txt"
+		rm "$srcbase/$build_prefix$build/CMakeCache.txt"
 	
 		cmake "$srcbase/$git_dir" -DCMAKE_INSTALL_PREFIX="$installbase/$build_prefix$build" -DWITH_DEBUG=1 -DDOWNLOAD_BOOST=1 -DWITH_BOOST="$srcbase/$build_prefix$build/boost" -DENABLE_DTRACE=0
 		make

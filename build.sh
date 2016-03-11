@@ -69,6 +69,8 @@ build()
 		echo "=> $build"
 		cd $srcbase/$git_dir
 		git checkout -f $build
+		git submodule init
+		git submodule update
 		git pull
 		if [ $? -ne 0 ]
 			then
@@ -80,7 +82,7 @@ build()
 	
 		rm "$srcbase/$build_prefix$build/CMakeCache.txt"
 	
-		cmake "$srcbase/$git_dir" -DCMAKE_INSTALL_PREFIX="$installbase/$build_prefix$build" -DWITH_DEBUG=1 -DDOWNLOAD_BOOST=1 -DWITH_BOOST="$srcbase/$build_prefix$build/boost" -DENABLE_DTRACE=0
+		cmake "$srcbase/$git_dir" -DCMAKE_INSTALL_PREFIX="$installbase/$build_prefix$build" -DWITH_DEBUG=1 -DDOWNLOAD_BOOST=1 -DDOWNLOAD_BOOST_TIMEOUT=1800 -DWITH_BOOST="$srcbase/$build_prefix$build/boost" -DENABLE_DTRACE=0
 		make
 	
 		if [ $? -ne 0 ]

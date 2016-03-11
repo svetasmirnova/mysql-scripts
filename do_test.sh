@@ -41,7 +41,7 @@ initialize()
 	MACHINE_HOME_DIR=$HOME
 	TESTDIR=$MACHINE_HOME_DIR/src/tests
 	BUILDDIR=$MACHINE_HOME_DIR/build
-	BUILDS="mysql-5.5 mysql-5.6 mysql-5.7"
+	BUILDS="mysql-5.5 mysql-5.6 mysql-5.7 mysql-5.8"
 	CLEAN=0 #false
 	MYSQLTEST_OPTIONS="--record --force"
 	TESTS_TO_PASS=""

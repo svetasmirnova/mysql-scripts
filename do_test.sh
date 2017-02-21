@@ -41,7 +41,7 @@ initialize()
 	MACHINE_HOME_DIR=$HOME
 	TESTDIR=$MACHINE_HOME_DIR/src/tests
 	BUILDDIR=$MACHINE_HOME_DIR/build
-	BUILDS="mysql-5.5 mysql-5.6 mysql-5.7 mysql-5.8"
+	BUILDS="mysql-5.5 mysql-5.6 mysql-5.7 mysql-8.0"
 	CLEAN=0 #false
 	MYSQLTEST_OPTIONS="--record --force"
 	TESTS_TO_PASS=""
@@ -49,7 +49,7 @@ initialize()
 	SUITE=""
 	SUITEDIR=""
 	OLD_PWD=`pwd`
-	VERSION="do_test v0.3 (Dec 09 2014)"
+	VERSION="do_test v0.4 (September 27 2016)"
 }
 
 # parses arguments/sets values to defaults
@@ -85,7 +85,7 @@ copy()
 	for build in $BUILDS
 	do
 		#cp -i for reject silent overload
-		cp "$TESTDIR"/t/*.{test,opt,init,sql} "$BUILDDIR/$build/mysql-test$SUITEDIR/t" 2>/dev/null
+		cp "$TESTDIR"/t/*.{test,opt,init,sql,cfg} "$BUILDDIR/$build/mysql-test$SUITEDIR/t" 2>/dev/null
 	done
 }
 

@@ -31,10 +31,10 @@ initialize()
 	
 	srcbase=$MACHINE_HOME_DIR/src/
 	installbase=$MACHINE_HOME_DIR/build
-	builds="5.5 5.6 5.7"
+	builds="5.5 5.6 5.7 8.0"
 	build_prefix="mysql-"
 	git_dir="mysql-server"
-	VERSION="build v0.4 (March 30 2015)"
+	VERSION="build v0.5 (September 27 2016)"
 }
 
 parse()

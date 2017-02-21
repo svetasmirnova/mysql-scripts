@@ -61,7 +61,7 @@ copy()
 	else
 		for test in $TESTS_TO_MOVE
 		do
-			cp "$TESTDIR/t/$test".{test,opt,init,sql} "$TESTDIR"/archive 2>/dev/null
+			cp "$TESTDIR/t/$test".{test,opt,init,sql,cfg} "$TESTDIR"/archive 2>/dev/null
 		done
 	fi
 }

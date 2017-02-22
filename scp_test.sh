@@ -34,13 +34,13 @@ initialize()
 	MOVETO='sveta@machine.foo.bar:~/machine/src/tests/t'
 	TESTS_TO_MOVE=""
 	OLD_PWD=`pwd`
-	VERSION="scp_test v0.3 (Dec 12 2014)"
+	VERSION="scp_test v0.4 (Feb 23 2017)"
 }
 
 # parses arguments/sets values to defaults
 parse()
 {
-	while getopts "vhd:" Option
+	while getopts "vhd:r:" Option
 	do
 		case $Option in
 			v) echo "$VERSION"; shift;;
@@ -50,6 +50,8 @@ parse()
 			*) usage; exit 0;;
 		esac
 	done
+
+	shift $((OPTIND-1))
 	
 	TESTS_TO_MOVE="$@"
 }

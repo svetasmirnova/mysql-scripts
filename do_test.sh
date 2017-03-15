@@ -85,7 +85,7 @@ copy()
 	for build in $BUILDS
 	do
 		#cp -i for reject silent overload
-		cp "$TESTDIR"/t/*.{test,opt,init,sql,cfg} "$BUILDDIR/$build/mysql-test$SUITEDIR/t" 2>/dev/null
+		cp "$TESTDIR"/t/*.{test,opt,init,sql,cfg,cnf} "$BUILDDIR/$build/mysql-test$SUITEDIR/t" 2>/dev/null
 	done
 }
 

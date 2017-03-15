@@ -13,7 +13,7 @@ Usage: `basename $0` [-v] [-d dirname] [-r user@host:path] [test ...]
 
 Options:
 
-	-d directory, contains test files
+	-d directory, which contains test files
 	-r path to test directory on remote server, default: sveta@machine.foo.bar:~/machine/src/tests/t
 	-v print version
 	-h print this help
@@ -63,7 +63,7 @@ copy()
 	else
 		for test in $TESTS_TO_MOVE
 	do
-		scp "$TESTDIR/t/$test".{test,opt,init,sql} "$MOVETO"
+		scp "$TESTDIR/t/$test".{test,opt,init,sql,cfg,cnf} "$MOVETO"
 	done
 	fi
 }

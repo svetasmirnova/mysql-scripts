@@ -95,7 +95,7 @@ run()
 	for build in $BUILDS
 	do
 		cd "$BUILDDIR/$build/mysql-test"
-		perl ./mysql-test-run.pl $MYSQLTEST_OPTIONS $TESTS_TO_PASS
+		perl ./mysql-test-run.pl --retry=0 --nowarnings $MYSQLTEST_OPTIONS $TESTS_TO_PASS
 	done
 	cd $OLD_PWD
 }

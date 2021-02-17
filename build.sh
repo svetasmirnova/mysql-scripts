@@ -31,7 +31,7 @@ initialize()
 	
 	srcbase=$MACHINE_HOME_DIR/src/
 	installbase=$MACHINE_HOME_DIR/build
-	builds="5.5 5.6 5.7 8.0"
+	builds="5.7 8.0"
 	build_prefix="mysql-"
 	git_dir="mysql-server"
 	VERSION="build v0.5 (September 27 2016)"
@@ -82,7 +82,7 @@ build()
 	
 		rm "$srcbase/$build_prefix$build/CMakeCache.txt"
 	
-		cmake "$srcbase/$git_dir" -DCMAKE_INSTALL_PREFIX="$installbase/$build_prefix$build" -DWITH_DEBUG=1 -DDOWNLOAD_BOOST=1 -DDOWNLOAD_BOOST_TIMEOUT=1800 -DWITH_BOOST="$srcbase/$build_prefix$build/boost" -DENABLE_DTRACE=0 -DWITH_ROCKSDB=0 -DMYSQL_MAINTAINER_MODE=0 -B "$srcbase/$build_prefix$build"
+		cmake "$srcbase/$git_dir" -DCMAKE_INSTALL_PREFIX="$installbase/$build_prefix$build" -DWITH_DEBUG=1 -DDOWNLOAD_BOOST=1 -DDOWNLOAD_BOOST_TIMEOUT=1800 -DWITH_BOOST="$srcbase/$build_prefix$build/boost" -DENABLE_DTRACE=0 -DWITH_ROCKSDB=1 -DMYSQL_MAINTAINER_MODE=0 -B "$srcbase/$build_prefix$build"
 		make
 	
 		if [ $? -ne 0 ]
